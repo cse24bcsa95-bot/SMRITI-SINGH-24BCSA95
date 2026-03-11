@@ -1,0 +1,39 @@
+
+ <html>
+<head>
+<title>Question_12</title>
+<script>
+    // Function to generate the Fibonacci sequence
+    function generateFibonacci(n) {
+        let fibArray = [];
+        
+        if (n <= 0) return fibArray;
+        if (n >= 1) fibArray.push(0); // First Fibonacci number
+        if (n >= 2) fibArray.push(1); // Second Fibonacci number
+        
+        for (let i = 2; i < n; i++) {
+            // Each new number is the sum of the previous two
+            fibArray[i] = fibArray[i - 1] + fibArray[i - 2];
+        }
+        
+        return fibArray;
+    }
+
+    // Getting input from user
+    let a = prompt("Enter the number of Fibonacci terms (n): ");
+    let n = parseInt(a);
+
+    if (isNaN(n) || n < 0) {
+        document.write("Please enter a valid positive number.");
+    } else {
+        // Calling the function and storing the result in an array
+        let result = generateFibonacci(n);
+        
+        // Displaying the resulting array
+        document.write("The first " + n + " Fibonacci numbers are: [" + result.join(", ") + "]");
+    }
+</script>
+</head>
+<body>
+</body>
+</html>

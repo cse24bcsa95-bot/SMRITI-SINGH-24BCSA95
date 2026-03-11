@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Question 09 - Armstrong Check</title>
+</head>
+<body>
+    <h1>Armstrong Number Checker</h1>
+    <p>Enter a number: <input type="number" id="numInput"> <button onclick="check()">Check</button></p>
+    <p id="displayResult"></p>
+    <script>
+        function check() {
+            let inputVal = document.getElementById("numInput").value;
+            let num = parseInt(inputVal);
+            
+            if (isNaN(num)) {
+                document.getElementById("displayResult").innerHTML = "Please enter a valid number.";
+                return;
+            }
+            let digits = inputVal.split('');
+            let power = digits.length;
+            let sum = 0;
+            for (let d of digits) {
+                sum += Math.pow(parseInt(d), power);
+            }
+            let isArmstrong = (sum === num);
+            document.getElementById("displayResult").innerHTML = 
+                "The number <b>" + num + "</b> is an Armstrong number: <b>" + isArmstrong + "</b>";
+        }
+    </script>
+</body>
+</html>
